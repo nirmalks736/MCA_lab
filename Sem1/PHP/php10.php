@@ -9,7 +9,6 @@ $indianPlayers = array(
     "Shikhar Dhawan",
     "Cheteshwar Pujara",
     "Ajinkya Rahane",
-    "Rishabh Pant"
     );
 function generateTable($data){
     echo"<table border='1'>";
