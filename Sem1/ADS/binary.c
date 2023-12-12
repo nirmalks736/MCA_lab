@@ -2,8 +2,8 @@
 #include<stdlib.h>
 struct node
 {
-struct node*left;
-struct node*right;
+    struct node*left;
+    struct node*right;
 int data;
 };
 struct node*root;
@@ -17,22 +17,22 @@ struct node*newNode(int value)
 }
     struct node*insert(struct node*root,int value)
     {
-    if(root==NULL)
+        if(root==NULL)
         {
-         return newNode(value);
+             return newNode(value);
         }
-    else if(value==root->data)
-    {
-    printf("Same data can't be stored");
-    }
-    else if(value>root->data)
-    {
-    root->right=insert(root->right,value);
-    }
-    else if (value<root->data)
-    {
-    root->left=insert(root->left,value);
-    }
+        else if(value==root->data)
+        {
+            printf("Same data can't be stored");
+        }
+        else if(value>root->data)
+        {
+            root->right=insert(root->right,value);
+        }
+        else if (value<root->data)
+        {
+            root->left=insert(root->left,value);
+        }
     return root;
     }
 void preorderTraversal(struct node*root)
@@ -45,7 +45,7 @@ void preorderTraversal(struct node*root)
 struct node*search(struct node*root,int key)
 {
     if(root==NULL)
-    printf("\nNot Found!\n");
+        printf("\nNot Found!\n");
     else
     {
         if(root->data<key)
@@ -57,23 +57,23 @@ struct node* minValueNode(struct node* node)
 {
 struct node*current=node;
     while(current&&current->left!=NULL)
-current=current->left;
+        current=current->left;
 return current;
 }
 struct node*deleteNode(struct node* root,int key)
 {
     if(root==NULL)
-    return root;
+        return root;
     if (key<root->data)
-    root->left=deleteNode(root->left,key);
+        root->left=deleteNode(root->left,key);
     else if(key>root->data)
-    root->right=deleteNode(root->right,key);
+        root->right=deleteNode(root->right,key);
     else
     if(root->left==NULL)
     {
-    struct node*temp=root->right;
-    free(root);
-    return temp;
+        struct node*temp=root->right;
+        free(root);
+        return temp;
     }
     else if(root->right==NULL)
     {
